@@ -1,6 +1,4 @@
 using System;
-using System.Collections.Generic;
-using System.Linq;
 using Humanizer;
 
 namespace GameUnit
@@ -9,18 +7,16 @@ namespace GameUnit
     {
         private readonly int movement;
         public virtual int Health { get; set; }
+        public abstract float Cost { get; }
 
         public Unit(int movement, int health)
         {
             this.movement = movement;
             Health = health;
-            Move(movement);
         }
 
-        public void Move(int movement) {
+        public void Move() {
             Console.WriteLine(movement.ToRoman());
         }
-        
-        public abstract float Cost();
     }
 }
